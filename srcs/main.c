@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadjigui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/04 16:38:14 by sadjigui          #+#    #+#             */
+/*   Updated: 2021/12/04 16:38:18 by sadjigui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
-int		ft_tablen(char **tab)
+int	ft_tablen(char **tab)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	if (tab == NULL)
@@ -12,7 +24,7 @@ int		ft_tablen(char **tab)
 	return (i);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_pile	*a;
 	t_pile	*b;
@@ -23,16 +35,13 @@ int		main(int ac, char **av)
 		exit(1);
 	tab = parse_arg(av);
 	check_arg(tab);
-
-  a = init_pile();
+	a = init_pile();
 	b = init_pile();
 	i = ft_tablen(tab);
 	while (i-- > 0)
 		empiler(a, ft_atoi(tab[i]));
 	free_tab(tab);
-
 	sort_pile(a, b);
-
 	free_pile(a);
 	free_pile(b);
 	return (0);

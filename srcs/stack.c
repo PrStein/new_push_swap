@@ -1,21 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadjigui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/04 17:33:32 by sadjigui          #+#    #+#             */
+/*   Updated: 2021/12/04 17:33:33 by sadjigui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
-t_pile		*init_pile(void)
+t_pile	*init_pile(void)
 {
 	t_pile	*stack;
 
-  stack = malloc(sizeof(t_pile);
+	stack = malloc(sizeof(t_pile));
 	if (!stack)
 		return (NULL);
 	stack->first = NULL;
 	return (stack);
 }
 
-void		empiler(t_pile *stack, int nb)
+void	empiler(t_pile *stack, int nb)
 {
-	t_element		*new;
+	t_element	*new;
 
-	if (!(new = malloc(sizeof(t_element))) || stack == NULL)
+	new = malloc(sizeof(t_element));
+	if (!new || stack == NULL)
 		exit(1);
 	new->nb = nb;
 	new->next = stack->first;
@@ -23,7 +36,7 @@ void		empiler(t_pile *stack, int nb)
 	return ;
 }
 
-int			depiler(t_pile *stack)
+int	depiler(t_pile *stack)
 {
 	int			depile_nb;
 	t_element	*depile_element;
@@ -41,7 +54,7 @@ int			depiler(t_pile *stack)
 	return (depile_nb);
 }
 
-int			pile_length(t_pile *stack)
+int	pile_length(t_pile *stack)
 {
 	t_element	*current;
 	int			i;
@@ -58,9 +71,9 @@ int			pile_length(t_pile *stack)
 	return (i);
 }
 
-void		display_pile(t_pile *stack)
+void	display_pile(t_pile *stack)
 {
-	t_element *current;
+	t_element	*current;
 
 	current = stack->first;
 	while (current)

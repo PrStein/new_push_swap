@@ -1,6 +1,18 @@
-#include "../include/stack.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_arg.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadjigui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/04 16:34:09 by sadjigui          #+#    #+#             */
+/*   Updated: 2021/12/04 16:34:14 by sadjigui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int		check_isnum(char *arg)
+#include "../include/push_swap.h"
+
+int	check_isnum(char *arg)
 {
 	int		i;
 
@@ -16,7 +28,7 @@ int		check_isnum(char *arg)
 	return (0);
 }
 
-int		isinteger(char *arg)
+int	isinteger(char *arg)
 {
 	long	res;
 
@@ -26,14 +38,14 @@ int		isinteger(char *arg)
 	return (0);
 }
 
-int		check_double(char **tab, int i)
+int	check_double(char **tab, int i)
 {
 	int		j;
 
 	j = i + 1;
 	while (tab[j])
 	{
-		if (!(ft_strcmp(tab[i], tab[j])))
+		if (!(ft_strncmp(tab[i], tab[j], ft_tablen(tab))))
 			return (-1);
 		j++;
 	}
