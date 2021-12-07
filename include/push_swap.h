@@ -50,6 +50,8 @@ typedef struct s_sort
 }						t_move;
 
 t_pile	*init_pile(void);
+t_move	*best_move_a_to_b(t_pile *a, t_pile *b);
+t_move	*init_move(void);
 
 int		ft_tablen(char **tab);
 int		main(int ac, char **av);
@@ -58,10 +60,22 @@ int		isinteger(char *arg);
 int		check_double(char **tab, int i);
 int		depiler(t_pile *stack);
 int		pile_length(t_pile *stack);
+int		find_biggest_nb_pos(t_pile *stack);
+int		find_smallest_nb_pos(t_pile *stack);
+int		find_min_nb(t_pile *stack);
+int		find_max_nb(t_pile *stack);
+int		exec_cmd2(char *cmd, t_pile *a, t_pile *b);
+int		exec_cmd(char *cmd, t_pile *a, t_pile *b);
+int		find_place_in_pile_descending(int nb, t_pile *stack);
+int		find_place_in_pile_ascending(int nb, t_pile *stack);
+int		check_pile_sorted(t_pile *stack);
+int		sorted_check_ps(t_pile *a, t_pile *b);
+int		check_digit(char **av);
 
-void	check_arg(char **tab);
+void	check_arg(char **tab, char **av);
 void	free_pile(t_pile *stack);
 void	free_tab(char **tab);
+void	free_move(t_move *sort);
 void	swap_nb(t_pile *stack);
 void	push_nb(t_pile *from, t_pile *to);
 void	rotate_nb(t_pile *stack, int len);
@@ -73,6 +87,16 @@ void	sort_all(t_pile *a, t_pile *b);
 void	sort_pile(t_pile *a, t_pile *b);
 void	empiler(t_pile *stack, int nb);
 void	display_pile(t_pile *stack);
+void	rotate_n_times(t_pile *a, t_pile *b, int pos);
+void	sort_exec(char *cmd, t_pile *a, t_pile *b);
+void	exec_best_move(t_move *best_move, t_pile *a, t_pile *b);
+void	set_move_in_both(t_move *move);
+void	copy_move_to_best_move(t_move *move, t_move *best_move);
+void	final_rotate(t_pile *a, t_pile *b);
+void	push_back_in_a(t_pile *a, t_pile *b);
+void	sorted_check(t_pile *a, t_pile *b);
+void	move_in_a(t_move *move, int pos, t_pile *a);
+void	move_in_b(t_move *move, int nb, t_pile *b);
 
 char	**ft_join_tab(char **tab, char **tmp_tab);
 char	**parse_arg(char **av);

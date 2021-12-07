@@ -42,3 +42,10 @@ void	free_tab(char **tab)
 	free(tab);
 	return ;
 }
+
+void	free_move(t_move *sort)
+{
+	free(sort);
+	sort = NULL;
+	return ;
+}

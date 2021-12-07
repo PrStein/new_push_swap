@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 	if (ac <= 1)
 		exit(1);
 	tab = parse_arg(av);
-	check_arg(tab);
+	check_arg(tab, av);
 	a = init_pile();
 	b = init_pile();
 	i = ft_tablen(tab);

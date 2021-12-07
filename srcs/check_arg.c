@@ -28,6 +28,30 @@ int	check_isnum(char *arg)
 	return (0);
 }
 
+int	check_digit(char **av)
+{
+	int i;
+	int j;
+
+	// if (arg[i] == ' ' && )
+	// 	i++;
+	i = 1;
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			if (av[i][0] == '-')
+				j++;
+			if (av[i][j] < '0' || av[i][j] > '9')
+				return(-1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
 int	isinteger(char *arg)
 {
 	long	res;
@@ -45,22 +69,28 @@ int	check_double(char **tab, int i)
 	j = i + 1;
 	while (tab[j])
 	{
-		if (!(ft_strncmp(tab[i], tab[j], ft_tablen(tab))))
+		if (!(ft_strncmp(tab[i], tab[j], ft_strlen(tab[i]))))
 			return (-1);
 		j++;
 	}
 	return (0);
 }
 
-void	check_arg(char **tab)
+void	check_arg(char **tab, char **av)
 {
 	int		i;
 
 	i = 0;
+	// if (check_digit(av) == -1)
+	// {
+	// 	free_tab(tab);
+	// 	printf("Error: arguments\n");
+	// 	exit(1);
+	// }
 	while (tab[i])
 	{
 		if (check_isnum(tab[i]) == -1
-			|| isinteger(tab[i]) == -1
+			||isinteger(tab[i]) == -1
 			|| check_double(tab, i) == -1)
 		{
 			free_tab(tab);
