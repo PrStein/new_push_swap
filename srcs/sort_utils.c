@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadjigui <sadjigui@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/08 19:26:01 by sadjigui          #+#    #+#             */
+/*   Updated: 2021/12/08 20:52:08 by sadjigui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 void	rotate_n_times(t_pile *a, t_pile *b, int pos)
@@ -24,7 +36,7 @@ void	rotate_n_times(t_pile *a, t_pile *b, int pos)
 	return ;
 }
 
-int		find_biggest_nb_pos(t_pile *stack)
+int	find_biggest_nb_pos(t_pile *stack)
 {
 	t_element	*current;
 	int			i;
@@ -35,7 +47,8 @@ int		find_biggest_nb_pos(t_pile *stack)
 	nb = current->nb;
 	i = 0;
 	pos = 0;
-	while ((current = current->next))
+	current = current->next;
+	while (current)
 	{
 		i++;
 		if (current->nb > nb)
@@ -43,11 +56,12 @@ int		find_biggest_nb_pos(t_pile *stack)
 			nb = current->nb;
 			pos = i;
 		}
+		current = current->next;
 	}
 	return (pos);
 }
 
-int		find_smallest_nb_pos(t_pile *stack)
+int	find_smallest_nb_pos(t_pile *stack)
 {
 	t_element	*current;
 	int			i;
@@ -58,7 +72,8 @@ int		find_smallest_nb_pos(t_pile *stack)
 	nb = current->nb;
 	i = 0;
 	pos = 0;
-	while ((current = current->next))
+	current = current->next;
+	while (current)
 	{
 		i++;
 		if (current->nb < nb)
@@ -66,11 +81,12 @@ int		find_smallest_nb_pos(t_pile *stack)
 			nb = current->nb;
 			pos = i;
 		}
+		current = current->next;
 	}
 	return (pos);
 }
 
-int		find_min_nb(t_pile *stack)
+int	find_min_nb(t_pile *stack)
 {
 	t_element	*current;
 	int			nb;
@@ -86,7 +102,7 @@ int		find_min_nb(t_pile *stack)
 	return (nb);
 }
 
-int		find_max_nb(t_pile *stack)
+int	find_max_nb(t_pile *stack)
 {
 	t_element	*current;
 	int			nb;

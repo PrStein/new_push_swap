@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   exec_cmd.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadjigui <sadjigui@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/08 19:24:08 by sadjigui          #+#    #+#             */
+/*   Updated: 2021/12/08 21:32:03 by sadjigui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
-int		exec_cmd2(char *cmd, t_pile *a, t_pile *b)
+int	exec_cmd2(char *cmd, t_pile *a, t_pile *b)
 {
 	if (!ft_strncmp(cmd, "ra", ft_strlen(cmd)))
 		rotate_nb(a, pile_length(a));
@@ -25,7 +37,7 @@ int		exec_cmd2(char *cmd, t_pile *a, t_pile *b)
 	return (1);
 }
 
-int		exec_cmd(char *cmd, t_pile *a, t_pile *b)
+int	exec_cmd(char *cmd, t_pile *a, t_pile *b)
 {
 	if (!ft_strncmp(cmd, "sa", ft_strlen(cmd)))
 		swap_nb(a);
@@ -48,7 +60,8 @@ int		exec_cmd(char *cmd, t_pile *a, t_pile *b)
 void	sort_exec(char *cmd, t_pile *a, t_pile *b)
 {
 	exec_cmd(cmd, a, b);
-	printf("%s\n", cmd);
+	ft_putstr(cmd);
+	ft_putstr("\n");
 }
 
 void	exec_best_move(t_move *best_move, t_pile *a, t_pile *b)
@@ -56,7 +69,7 @@ void	exec_best_move(t_move *best_move, t_pile *a, t_pile *b)
 	while (best_move->move_in_both > 0)
 	{
 		if (best_move->rotate_r_in_a == TRUE
-				&& best_move->rotate_r_in_b == TRUE)
+			&& best_move->rotate_r_in_b == TRUE)
 			sort_exec("rrr", a, b);
 		else
 			sort_exec("rr", a, b);

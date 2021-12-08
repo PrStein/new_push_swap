@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sadjigui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sadjigui <sadjigui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 18:20:27 by sadjigui          #+#    #+#             */
-/*   Updated: 2021/12/04 18:20:30 by sadjigui         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:56:03 by sadjigui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int		check_pile_sorted(t_pile *stack);
 int		sorted_check_ps(t_pile *a, t_pile *b);
 int		check_digit(char **av);
 
-void	check_arg(char **tab, char **av);
+void	check_arg(char **tab);
 void	free_pile(t_pile *stack);
 void	free_tab(char **tab);
 void	free_move(t_move *sort);

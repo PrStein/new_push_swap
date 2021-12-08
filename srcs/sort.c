@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sadjigui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sadjigui <sadjigui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 17:30:44 by sadjigui          #+#    #+#             */
-/*   Updated: 2021/12/04 17:30:46 by sadjigui         ###   ########.fr       */
+/*   Updated: 2021/12/08 21:36:19 by sadjigui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ void	sort_pile(t_pile *a, t_pile *b)
 	int		len;
 
 	len = pile_length(a);
-	if (sorted_check_ps(a, b))
-		return ;
+	// if (sorted_check_ps(a, b))
+	// 	return ;
 	if (len == 2)
 		sort_exec("sa", a, b);
 	else if (len == 3)

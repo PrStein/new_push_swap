@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sadjigui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sadjigui <sadjigui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 16:38:14 by sadjigui          #+#    #+#             */
-/*   Updated: 2021/12/04 16:38:18 by sadjigui         ###   ########.fr       */
+/*   Updated: 2021/12/08 20:54:54 by sadjigui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 	if (ac <= 1)
 		exit(1);
 	tab = parse_arg(av);
-	check_arg(tab, av);
+	check_arg(tab);
 	a = init_pile();
 	b = init_pile();
 	i = ft_tablen(tab);

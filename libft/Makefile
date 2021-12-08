@@ -50,6 +50,9 @@ BONUS =	ft_lstnew.c \
         ft_lstiter.c \
         ft_lstmap.c \
         ft_lstclear.c \
+				ft_putchar.c \
+				ft_putstr.c \
+				ft_strcmp.c \
 
 SRCS_O    = ${SRCS:.c=.o}
 BONUS_O        = ${BONUS:.c=.o}

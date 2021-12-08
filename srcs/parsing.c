@@ -47,7 +47,7 @@ char	**parse_arg(char **av)
 	char	**tmp_tab;
 	int		i;
 
-	i = 0;
+	i = 1;
 	tab = ft_split(av[i], ' ');
 	while (av[i] && av[i + 1])
 	{

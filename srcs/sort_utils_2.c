@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_utils_2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadjigui <sadjigui@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/08 19:17:09 by sadjigui          #+#    #+#             */
+/*   Updated: 2021/12/08 21:38:28 by sadjigui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
-int		find_place_in_pile_descending(int nb, t_pile *stack)
+int	find_place_in_pile_descending(int nb, t_pile *stack)
 {
 	t_element	*current;
 	int			pos;
@@ -24,7 +36,7 @@ int		find_place_in_pile_descending(int nb, t_pile *stack)
 	return (0);
 }
 
-int		find_place_in_pile_ascending(int nb, t_pile *stack)
+int	find_place_in_pile_ascending(int nb, t_pile *stack)
 {
 	t_element	*current;
 	int			pos;
@@ -53,6 +65,7 @@ void	final_rotate(t_pile *a, t_pile *b)
 	int		pos;
 	int		move;
 
+	move = 0;
 	pos = find_smallest_nb_pos(a);
 	if (pos >= pile_length(a) / 2)
 		move = pile_length(a) - pos;

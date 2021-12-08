@@ -6,7 +6,7 @@
 /*   By: sadjigui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 12:44:41 by sadjigui          #+#    #+#             */
-/*   Updated: 2021/05/22 12:51:50 by sadjigui         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:13:51 by sadjigui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static int	ft_space(const char *str)
 
 long	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	result;
 
 	result = 0;
